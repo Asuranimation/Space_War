@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bde7ce4b00a1d42970478913963533, type: 3}
+  m_Name: waveConfig 2
+  m_EditorClassIdentifier: 
+  pathPrefab: {fileID: 6034080330350213052, guid: c910f38eb67e5944a9c17720005f26f5, type: 3}
+  moveSpeed: 3
+  enemyPrefabs: []
+  bossPrefabs:
+  - {fileID: 0}
+  MaxSpawnTime: 0.2

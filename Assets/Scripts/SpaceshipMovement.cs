@@ -19,8 +19,8 @@ public class SpaceshipMovement : MonoBehaviour
 
     private void Move()
     {
-        float deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed; 
-        float deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
+        float deltaX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; 
+        float deltaY = Input.GetAxis ("Vertical")  * moveSpeed * Time.deltaTime; 
         float newXPosition = Mathf.Clamp(transform.position.x + deltaX,xMin,xMax);
         float newYPosition = Mathf.Clamp(transform.position.y + deltaY,yMin,yMax);
         transform.position = new Vector2(newXPosition, newYPosition);

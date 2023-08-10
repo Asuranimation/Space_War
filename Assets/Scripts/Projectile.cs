@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -9,7 +6,12 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("wall"))
         {
-            transform.position = Vector3.zero;
+            gameObject.SetActive(false);
+        }
+        else if(other.CompareTag("Enemies"))
+        {
+            var hit = other.GetComponent<Health>();
+            hit.TakeDamage(20);
             gameObject.SetActive(false);
         }
     }

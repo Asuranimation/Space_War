@@ -6,12 +6,17 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
+    
     [SerializeField] private float speedLaser;
     [SerializeField] private float rangeTimeToShoot;
+    
     [SerializeField] private int poolSize = 20; 
     [SerializeField] private List<GameObject> projectilePool = new List<GameObject>();
+    
     [SerializeField] private Transform tempObject;
-     
+
+    
+    
      void Start()
      {
          for (int i = 0; i < poolSize; i++)
@@ -25,19 +30,20 @@ public class Shooter : MonoBehaviour
     {
         Fire();
     }
-
+    
     private void Fire()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") )
         {
             StartCoroutine(FireContinuosly());
         }
-
+    
         if (Input.GetButtonUp("Fire1"))
         {
             StopAllCoroutines();
         }
     }
+    
     IEnumerator FireContinuosly()
     {
         while (true)
@@ -68,5 +74,6 @@ public class Shooter : MonoBehaviour
         }
         return null;
     }
+    
     
 }
