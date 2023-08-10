@@ -15,8 +15,12 @@ public class EnemySpawner : MonoBehaviour
     int turnLoop;
     [SerializeField] GameObject bossAviable;
 
+    [SerializeField] Enemy[] listEnemy;
+
     void Start()
     {
+        int random = Random.Range(0, listEnemy.Length);
+        Instantiate(listEnemy[random]);
         StartCoroutine(SpawnEnemiesWave());
     }
 

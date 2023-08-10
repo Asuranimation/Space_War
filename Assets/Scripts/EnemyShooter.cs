@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooter : MonoBehaviour
+public class EnemyShooter : Enemy
 {
     [SerializeField] private GameObject projectilePrefabs;
     [SerializeField] private float projectileSpeed = 10f;
@@ -52,6 +52,7 @@ public class EnemyShooter : MonoBehaviour
             GameObject laser = GetPooledObject();
             if (laser != null)
             {
+                laser.GetComponent<Projectile>().damage = damageValue;//ini yg gw tambah
                 laser.transform.position = transform.position;
                 laser.SetActive(true);
                 laser.GetComponent<Rigidbody2D>().velocity = Vector2.down * speedLaser;
